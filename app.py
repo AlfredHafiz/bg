@@ -41,9 +41,4 @@ def after_request(response):
     # Clean up temp files if they exist
     if hasattr(response, '_temp_file'):
         os.unlink(response._temp_file)
-    return response
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 10000))
-    app.logger.info(f"Starting Flask app on port {port}")
-    app.run(host='0.0.0.0', port=port) 
+    return response 
