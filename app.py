@@ -43,7 +43,5 @@ def after_request(response):
         os.unlink(response._temp_file)
     return response
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    logger.info(f"Starting server on port {port}")
-    app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False) 
+# This is the correct way to run the app for production
+app.logger.info("Flask app is ready to serve traffic") 
