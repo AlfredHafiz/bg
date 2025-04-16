@@ -45,4 +45,5 @@ def after_request(response):
 
 if __name__ == '__main__':
     # Use 0.0.0.0 to make the server accessible from other devices on the network
-    app.run(host='0.0.0.0', port=5000, debug=True) 
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False) 
